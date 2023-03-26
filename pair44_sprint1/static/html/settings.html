@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #next {
+            padding: 10px 50px;
+            background-color: white;
+            border: 1px solid grey;
+            margin-top: 100px;
+            color: black;
+            text-decoration: none;
+        }
+
+        #content {
+            height: 800px;
+            width: 800px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -400px 0 0 -400px;
+        }
+
+        table td:nth-child(2) {
+            text-align: center;
+        }
+
+        th, td {
+            padding: 15px;
+        }
+
+        img {
+            width: 40%;
+            height: 40%;
+        }
+
+        input[type='number'] {
+            width: 80px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        input[type='number']::-webkit-inner-spin-button,
+        input[type='number']::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type='checkbox'] {
+            width: 20px;
+            height: 20px;
+        }
+
+        .upload>input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <h1 style="color: gray">Bug World</h1>
+    <table>
+        <tr>
+            <td>Please upload a world map file:</td>
+            <td>
+                <div class="upload">
+                    <label for="world-map">
+                        <img src="./static/img/upload_icon.svg" alt="upload"/>
+                    </label>
+                    <input type='file' id="world-map" onchange='openWorldMap(event)'>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Please upload a bug assembler source code file #1</td>
+            <td>
+                <div class="upload">
+                    <label for="bug-asm1">
+                        <img src="./static/img/upload_icon.svg" alt="upload"/>
+                    </label>
+                    <input type='file' id="bug-asm1" onchange='openBugFile(event)'>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Please upload a bug assembler source code file #2</td>
+            <td>
+                <div class="upload">
+                    <label for="bug-asm2">
+                        <img src="./static/img/upload_icon.svg" alt="upload"/>
+                    </label>
+                    <input type='file' id="bug-asm2" onchange='openBugFile(event)'>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Please select the number of iterations:</td>
+            <td>
+                <label for="iterations"></label>
+                <input type="number" id="iterations" value="500">
+            </td>
+        </tr>
+        <tr>
+            <td>Do you want to log the results of the session?</td>
+            <td>
+                <label for="log"></label>
+                <input type="checkbox" id="log" checked>
+            </td>
+        </tr>
+    </table>
+    <a href="./game" class="nav__link" id="next" data-link>Next</a>
+
+</div>
+</body>
+</html>

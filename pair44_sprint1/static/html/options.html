@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #next {
+            padding: 10px 50px;
+            background-color: white;
+            border: 1px solid grey;
+            margin-top: 100px;
+            color: black;
+            text-decoration: none;
+        }
+
+        #content {
+            height: 800px;
+            width: 800px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -400px 0 0 -400px;
+        }
+
+        table td:nth-child(2) {
+            text-align: center;
+        }
+
+        th, td {
+            padding: 15px;
+        }
+
+        input[type='number'] {
+            width: 80px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        input[type='number']::-webkit-inner-spin-button,
+        input[type='number']::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <h1 style="color: gray">Options</h1>
+    <table>
+        <tr>
+            <td>Change bugs' color #1:</td>
+            <td>
+                <label for="bugs1-color"></label>
+                <input type="color" id="bugs1-color" value="#ff0000">
+            </td>
+        </tr>
+        <tr>
+            <td>Change bugs' color #2:</td>
+            <td>
+                <label for="bugs2-color"></label>
+                <input type="color" id="bugs2-color" value="#000000">
+            </td>
+        </tr>
+        <tr>
+            <td>Number of iterations:</td>
+            <td>
+                <label for="iterations"></label>
+                <input type="number" id="iterations" value="500">
+            </td>
+        </tr>
+        <tr>
+            <td>The duration of a tick in seconds:</td>
+            <td>
+                <label for="tick-duration"></label>
+                <input type="number" id="tick-duration" value="10">
+            </td>
+        </tr>
+    </table>
+    <a href="./game" class="nav__link" id="next" data-link>Back</a>
+
+</div>
+</body>
+</html>
