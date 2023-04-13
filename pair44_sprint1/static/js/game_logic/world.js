@@ -27,7 +27,6 @@ export class World {
         this.#width = width;
 
         this.#map = []
-
         for(let i = 0; i < height; i+=1) {
             let row = []
             for (let j = 0; j < width; j+=1) {

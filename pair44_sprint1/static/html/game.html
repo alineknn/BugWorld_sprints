@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
     
     <style>
         .button {
@@ -60,16 +61,21 @@
         }
     </style>
     <link href="../css/world.css" rel="stylesheet" type="text/css">
+=======
+    <link href="/static/css/world.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/game.css" rel="stylesheet" type="text/css">
+>>>>>>> e6c51c6e0ba24f9eb8a34da1b94958cb6f74aef6
 </head>
 <body>
 <div class="page">
-    <div class="row" style="flex: 80%">
-        <div class="column" style="flex: 70%">
-            <div id="simulator">
-                
+    <div class="row-block" style="flex: 80%">
+        <div class="column-block" style="flex: 70%">
+            <div id="world-simulator">
+                <div id="simulator">
+                </div>
             </div>
         </div>
-        <div class="column" id="sidebar" style="flex: 30%">
+        <div class="column-block" id="sidebar" style="flex: 30%">
             <a href="./options" class="nav__link button" data-link>Options</a>
             <a href="./quit" class="nav__link button" data-link>Quit</a>
             <div id="stats">
@@ -108,7 +114,7 @@
             </div>
         </div>
     </div>
-    <div class="row" id="logs" style="flex: 20%">
+    <div class="row-block" id="logs" style="flex: 20%">
         Logs will be here
     </div>
 </div>

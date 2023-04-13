@@ -11,12 +11,12 @@ import { Marker } from './game_logic/marker.js';
  * @param {World} world - world to be displayed
  * @return {HTMLDivElement}
  */
-function generateWorldDoc(world) { 
+export function generateWorldDoc(world) { 
     
     let [height, width] = world.size
 
 
-    var screenWidth = window.innerWidth
+    var screenWidth = window.innerWidth 
     || document.documentElement.clientWidth
     || document.body.clientWidth;
 
@@ -26,18 +26,17 @@ function generateWorldDoc(world) {
     let w = screenWidth / width;
 
 
-    let scaleValue = w / 90;
+    let scaleValue = w / 50;
     // let w = 50; // constant size of cell
 
 
     let worldDoc = document.createElement('div');
     worldDoc.className = "world"
+    worldDoc.style.display = "inline-block";
+    worldDoc.style.width = "min-content";
+    worldDoc.style.margin = "auto";
 
-    // worldDoc.style.transform = `scale(${scaleValue})`; // divide by 100 (size of cell) because we want to scale in percents
-
-    
-    worldDoc.style.transformOrigin = "top left";
-    
+    // worldDoc.style.transform = `scale(${scaleValue})`; // divide by 100 (size of cell) because we want to scale in percents    
 
 
     for(var i = 0; i < height; i++) {
@@ -49,8 +48,8 @@ function generateWorldDoc(world) {
             cellDoc.className = "cell"
             cellDoc.id = "cell-" + i + "-" + j; 
 
-            cellDoc.style.width = 100 * 0.3 + "px";
-            cellDoc.style.height = 110 * 0.3 + "px";
+            cellDoc.style.width = 100 * 0.34 + "px";
+            cellDoc.style.height = 110 * 0.34 + "px";
     
             updateCell(cellDoc, world.cellAt(new Position(i, j)))
             rowDoc.appendChild(cellDoc);
@@ -176,5 +175,3 @@ function updateCell(cellDoc, cell) {
 
 
 // console.log("HELLO WTF?")
-
-// (worldDocument);
