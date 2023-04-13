@@ -1,4 +1,4 @@
-class Assembler {
+export default class Assembler {
 
     assemble(text) { // returns Instruction;
         text = text.replaceAll(new RegExp(Assembler.comment, "gm"), ""); // deleting all comments
@@ -11,16 +11,17 @@ class Assembler {
         strings.forEach((str, _idx) => {
             let arr = str.split(" ");
             let instr;
+            console.log("Assembling")
             switch (arr[0]) {
                 case "sense":
                     let cond = this.#getCond(arr[4]);
+                    console.log(cond)
                     if (cond == Condition.Marker) {
                         cond = cond[parseInt(arr[5])];
                     }
-                    instr = new Sense(
-                        this.#getDir(arr[1]),
-                        cond
-                    );
+
+                    instr = new Sense(this.#getDir(arr[1]),cond);
+
                     next.push([arr[2], arr[3]]);
                     break;
                 case "mark":

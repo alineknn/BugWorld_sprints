@@ -29,7 +29,7 @@ export class Sense extends Instruction {
     }
 }
 
-class Mark extends Instruction {
+export class Mark extends Instruction {
     int; // Integer
     then; // Instruction
 

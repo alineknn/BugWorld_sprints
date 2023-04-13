@@ -1,6 +1,7 @@
+import Assembler from "./assembler/assembler.js";
 const openBugFile = async function (event) {
     let input = event.target;
-
+    console.log("openfile called");
     let file = input.files[0];
     let text = file.text();
     text.then((value) => {
@@ -8,7 +9,7 @@ const openBugFile = async function (event) {
             let instruction = new Assembler().assemble(value); // change the variable later
         }
         catch(err) {
-            console.log(err);
+            console.log(err,);
         }
     })
     .catch((err) => {
