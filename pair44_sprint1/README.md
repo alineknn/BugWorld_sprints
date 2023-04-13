@@ -75,3 +75,4 @@ Sprint 2.
 - **Tests:**
   - Created tests for the map parsing and validation of them
 
+![](doc/world.png)
