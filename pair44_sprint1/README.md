@@ -1,3 +1,5 @@
+Sprint 1.
+
 Documentation:
 After launching the app, you are presented with the start page. To proceed, click "Start!"
 
@@ -49,8 +51,27 @@ Used libraries/frameworks:
 
 How to deploy:
 
-??? describe the web-server setup
+```python
+live-server 
+```
+
 
 How to run unit tests:
 
-Unit tests are extremely easy to run. Just navigate to the page /test.html
+Unit tests are extremely easy to run. Just navigate to the page http://localhost:port/test.html
+
+
+Sprint 2.
+
+- **Frontend:**
+  - Develop the "generateWorldDoc(world)" function that creates an HTML document for the game field, featuring elements like bugs, food, barriers, and markers. 
+  - Injected "generateWorldDoc" into existing structure.
+  - Fixed imports and exports of functions and classes (assembler and fileupload)
+  - fixed linking js files to the index html
+- **Game Logic:**
+  - Improved previous object structures along with function signatures.
+  - Deserialization of world from file
+
+- **Tests:**
+  - Created tests for the map parsing and validation of them
+
