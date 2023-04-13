@@ -9,6 +9,7 @@ export default class extends AbstractView {
     }
 
     async getHtml() {
+          
         return $.ajax({
             type: "GET",
             url: "static/html/game.html",

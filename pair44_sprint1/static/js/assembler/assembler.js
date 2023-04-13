@@ -1,5 +1,4 @@
 export default class Assembler {
-
     assemble(text) { // returns Instruction;
         text = text.replaceAll(new RegExp(Assembler.comment, "gm"), ""); // deleting all comments
         if (!new RegExp(Assembler.program).test(text)) { // check if text matches the regex of a program

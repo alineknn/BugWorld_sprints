@@ -73,7 +73,7 @@ QUnit.module('assembler', function() {
         })
     });
 
-    QUnit.test('Does not throw', assert => {
+    QUnit.test('Does not throw', assert => {    
         assert.ok(() => {
             new Assembler().assemble(`
                             sense ahead 1 3 food ; [ 0]
@@ -124,7 +124,7 @@ QUnit.module('assembler', function() {
                 return true;
             }
         }
-        let instruction = new Assembler().assemble(`
+        var instruction = (new Assembler()).assemble(`
                                     sense ahead 1 7 marker 5
                                     mark 0 2
                                     unmark 0 3

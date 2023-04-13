@@ -54,7 +54,15 @@ export class WorldCell {
      */
     removeBase() {
         this.#base = null;
+    }   
+
+    /**
+     * Set obstructed to value
+     */
+    setObstructed(value) {
+        this.#obstructed = value;
     }
+    
 
     /**
      * Shows whether the cell is obstructed.

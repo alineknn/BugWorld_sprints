@@ -179,6 +179,23 @@ export class World {
         }
         cell.setFood(amount);
     }
+    
+
+    
+    /**
+     * Places food in the given position.
+     * @param {Position} position - the given position
+     * @param {number} amount - the amount of food that will be placed
+     */
+    setFoodAt(position, amount) {
+        this.#checkPosition(position);
+        const cell = this.cellAt(position);
+        if (cell.isOccupied()) {
+            throw new Error("try to assign food to the occupied cell")
+        }
+        cell.setFood(amount);
+    }
+
 
     /**
      * Returns the amount of food in the concrete cell
@@ -282,5 +299,84 @@ export class World {
      */
     toString() {
         throw new Error("Not implemented")
+    }
+    
+    /**
+     *  Returns a new world from a string representation.
+     * @return {World}
+     */
+    static parse(str) {
+        let lines = str.trim().split("\n")
+
+        if (lines.length <= 2) {
+            throw new Error("Invalid world")
+        }
+        
+        let height = Number(lines[0])
+        let width = Number(lines[1])
+
+        if (hegiht <= 2 || width <= 2) {
+            throw new Error("Invalid world size")
+        }   
+         
+        if (lines.length != height + 2) {
+            throw new Error("The field does not correspond to the indicated dimensions")
+        }
+        
+
+        let red = false;
+        let black = false;
+
+
+        let world = new World(height, width)
+
+        for(let line_i = 2; line_i < lines.length; line_i++) {
+            let i = line_i - 2;
+
+            let rowChars = lines[line_i].split(" ")
+            if (rowChars.length !== width) {
+                throw new Error("Rows have different length")
+            }
+            
+            for(let j = 0; j < rowChars.length; j++) {
+                let curChar = rowChars[j];
+                let position = new Position(i, j)
+
+                if ('1' <= curChar && curChar <= '9') {
+                    let cell = world.cellAt(position)
+                    cell.setFood(Number(curChar))
+                } else if(curChar == '#') {
+                    let cell = world.cellAt(position)
+                    cell.setObstructed(true)
+                } else if(curChar == '.') {
+                    continue;    
+                } else if(curChar == '-' || curChar == '+') {
+                    if (curChar == '-') {
+                        black = true;
+                    } else {
+                        red = true;
+                    }
+
+                    let color = curChar == '-' ? Color.Black : Color.Red;
+
+                    let bug = new Bug(i * width + j, position, color, 0, 0, 0, false, null)
+                    let cell = world.cellAt(position)
+                    cell.setBase(color)
+                    cell.setBug(bug)
+                } else {
+                    throw new Error("Invalid character in map")
+                }
+            }
+        }
+
+        if (!red)  {
+            throw new Error("No red swarm")
+        }
+
+        if (!black)  {
+            throw new Error("No black swarm")
+        }
+
+        return world;
     }
 }
