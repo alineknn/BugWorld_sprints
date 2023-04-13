@@ -1,0 +1,1 @@
+export const Color = { Red: 'red', Black: 'black' }
