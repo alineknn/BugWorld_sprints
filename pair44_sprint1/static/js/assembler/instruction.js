@@ -3,12 +3,12 @@ This is the finite automata, every Instruction is a state
 with pointers to next state(s), when it is executed the next
 state is returned.
 */
-class Instruction {
+export class Instruction {
     constructor() {};
     execute(bug) {}; // returns next Instruction;
 }
 
-class Sense extends Instruction {
+export class Sense extends Instruction {
     dir; // CellDirection
     cond; // Condition
     then; // Instruction
@@ -44,7 +44,7 @@ class Mark extends Instruction {
     }
 }
 
-class Unmark extends Instruction {
+export class Unmark extends Instruction {
     int; // Integer
     then; // Instruction
 
@@ -59,7 +59,7 @@ class Unmark extends Instruction {
     }
 }
 
-class PickUp extends Instruction {
+export class PickUp extends Instruction {
     then; // Instruction
     else; // Instruction
 
@@ -76,7 +76,7 @@ class PickUp extends Instruction {
     }
 }
 
-class Drop extends Instruction {
+export class Drop extends Instruction {
     then; // Instruction
 
     constructor() {
@@ -89,7 +89,7 @@ class Drop extends Instruction {
     }
 }
 
-class Turn extends Instruction {
+export class Turn extends Instruction {
     dir; // Direction
     then; // Instruction
 
@@ -104,7 +104,7 @@ class Turn extends Instruction {
     }
 }
 
-class Move extends Instruction {
+export class Move extends Instruction {
     then; // Instruction
     else; // Instruction
 
@@ -122,7 +122,7 @@ class Move extends Instruction {
     }
 }
 
-class Flip extends Instruction {
+export class Flip extends Instruction {
     int; // Integer
     then; // Instruction
     else; // Instruction

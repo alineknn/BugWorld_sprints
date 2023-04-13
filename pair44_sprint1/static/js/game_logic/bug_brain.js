@@ -1,27 +1,14 @@
-import {Instruction} from '../assembler/instructions.js'
+import {Instruction} from '../assembler/instruction.js'
 
 /**
  * @class BugBrain
- * @param {Array<Instruction>} instructions - list of instructions
- * @param {number} pos                      - current position in the `instructions` array
+ * @param {Instruction} instruction     - the first instruction to execute
  */
 export class BugBrain {
-    #instructions;
-    #index;
+    #instruction;
 
-    constructor(instructions) {
-        switch (instructions) {
-            case null: {
-                this.#instructions = null;
-                this.#index = -1;
-                break;
-            }
-            default: {
-                this.#instructions.addAll(instructions);
-                this.#index = 0;
-            }
-        }
-
+    constructor(instruction) {
+        this.#instruction = instruction;
     }
 
     /**

@@ -4,9 +4,13 @@
 <body>
 <div id="qunit"></div>
 <div id="qunit-fixture"></div>
-<script src="./static/js/lib/qunit-2.19.4.js"></script>
-<script src="./static/js/enums.js"></script>
-<script src="./static/js/instruction.js"></script>
-<script src="./static/js/assembler.js"></script>
-<script src="./test/assembler.js"></script>
+<script type="module" src="./static/js/lib/qunit-2.19.4.js"></script>
+<script type="module" src="./static/js/enums/cell_directions.js"></script>
+<script type="module" src="./static/js/enums/color.js"></script>
+<script type="module" src="./static/js/enums/conditions.js"></script>
+<script type="module" src="./static/js/enums/turn_directions.js"></script>
+
+<script type="module" src="./static/js/assembler/instruction.js"></script>
+<script type="module" src="./static/js/assembler/assembler.js"></script>
+<script type="module" src="./test/assembler.js"></script>
 </body>

@@ -168,10 +168,13 @@ function updateCell(cellDoc, cell) {
 }
 
 
-let world = new World(14, 20)
+// let world = new World(14, 20)
 
-let worldDocument = generateWorldDoc(world);
+// let worldDocument = generateWorldDoc(world);
 
-document.getElementById("simulator").appendChild(worldDocument);
+// document.getElementById("simulator").appendChild(worldDocument);
+
+
+// console.log("HELLO WTF?")
 
 // (worldDocument);

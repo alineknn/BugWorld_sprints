@@ -5,7 +5,7 @@ export const Condition = {
     FoeWithFood : "FoeWithFood",
     Food : "Food",
     Rock : "Rock",
-    Marker : Marker,
+    Marker : "Marker",
     FoeMarker : "FoeMarker",
     Home : "Home",
     FoeHome : "FoeHome"
