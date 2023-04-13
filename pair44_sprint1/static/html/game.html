@@ -2,74 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
-    <style>
-        .button {
-            padding: 10px 50px;
-            background-color: white;
-            border: 1px solid grey;
-            margin-top: 30px;
-            color: black;
-            text-decoration: none;
-            text-align: center;
-            margin-left: 20px;
-            margin-right: 20px;
-        }
-
-        .page {
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            padding: 0;
-            margin: 0;
-            top: 0;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            font-size: 30px;
-        }
-
-        .row {
-            border: 1px solid black;
-            display: flex;
-        }
-
-        .column {
-            flex: 50%;
-            border: 1px solid black;
-        }
-
-        #sidebar {
-            display: flex;
-            flex-direction: column;
-        }
-
-        #stats {
-            margin-top: 40px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .stat {
-            margin-top: 10px;
-            margin-left: 20px;
-        }
-
-        .value {
-            display: inline-block;
-        }
-    </style>
     <link href="/static/css/world.css" rel="stylesheet" type="text/css">
+    <link href="/static/css/game.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="page">
-    <div class="row" style="flex: 80%">
-        <div class="column" style="flex: 70%">
-            <div id="simulator">
-                
+    <div class="row-block" style="flex: 80%">
+        <div class="column-block" style="flex: 70%">
+            <div id="world-simulator">
+                <div id="simulator">
+                </div>
             </div>
         </div>
-        <div class="column" id="sidebar" style="flex: 30%">
+        <div class="column-block" id="sidebar" style="flex: 30%">
             <a href="./options" class="nav__link button" data-link>Options</a>
             <a href="./quit" class="nav__link button" data-link>Quit</a>
             <div id="stats">
@@ -108,7 +53,7 @@
             </div>
         </div>
     </div>
-    <div class="row" id="logs" style="flex: 20%">
+    <div class="row-block" id="logs" style="flex: 20%">
         Logs will be here
     </div>
 </div>

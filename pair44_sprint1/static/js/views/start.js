@@ -12,5 +12,5 @@ export default class extends AbstractView {
             url: "static/html/index.html",
             async: false
         }).responseText;
-    }
+    }   
 }
