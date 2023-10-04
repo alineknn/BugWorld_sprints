@@ -1,0 +1,181 @@
+Test Cases Description:
+Input various different files expecting different results.
+Test Data files should be uploaded as a world map file.
+Any .txt file should be uploaded for bug assembler code 
+due to it being not implemented
+
+Test Case #1
+Test Case Description:
+Check map parsing.
+
+File name: map.txt
+Test steps:
+    1. Open application
+    2. Press Start
+    3. Input files (map, bug 1 and bug 2)
+    4. Click Start
+
+Test Data:
+10
+10
+# # # # # # # # # # # 
+# # # # # # # # # # #
+# # # # # # # # # # #
+# # # # # # # # # # #
+# # # # # # # # # # #
+# # # # # # # # # # #
+# # # # # # # # # # #
+# # # # # # # # # # #
+# # # # # # # # # # #
+# # # # # # # # # # #
+
+Expected Result:
+Should see a 10x10 hexagon map drawn on a canvas.
+
+Result: As expected
+--------------------------------------------------
+Test Case #2
+Test Case Description:
+Check map (reading file) parsing with different variables as input
+
+File name: map_wrong_variable.txt
+Test steps:
+    1. Open application
+    2. Press Start
+    3. Input files (map, bug 1 and bug 2)
+    4. Click Start
+
+Test Data:
+a
+10
+# # # # # # # # # # # 
+# # # # # # # # # # #
+# # # # # # # # # # #
+# # # # # # # # # # #
+# # # # # # # # # # #
+# # # # # # # # # # #
+# # # # # # # # # # #
+# # # # # # # # # # #
+# # # # # # # # # # #
+# # # # # # # # # # #
+
+Expected Result:
+Should see an empty canvas due to error input.
+
+Error message: World.js:30 Assertion failed:
+The field does not correspond to the indicated dimensions
+
+Result: As expected
+--------------------------------------------------
+Test Case #3
+Test Case Description:
+Check map (reading file) parsing with incorrect size input
+
+File name: map_incorrect_size.txt
+Test steps:
+    1. Open application
+    2. Press Start
+    3. Input files (map, bug 1 and bug 2)
+    4. Click Start
+
+Test Data:
+10
+10
+# # # # # # # # # 
+# # # # # # # # # 
+# # # # # # # # # 
+# # # # # # # # # 
+# # # # # # # # # 
+# # # # # # # # # 
+# # # # # # # # # 
+# # # # # # # # # 
+# # # # # # # # # 
+# # # # # # # # # 
+
+Expected Result:
+Should see an empty canvas due to wrong size input.
+Program was told to draw a 10x10 hexagon grid but the input
+for the map is 8x10
+
+Error message: Assertion failed: The field does not correspond to the indicated dimensions
+
+Result: As expected
+--------------------------------------------------
+Test Case #4
+Test Case Description:
+Check map parsing.
+
+File name: map_wrong_input.txt
+Test steps:
+    1. Open application
+    2. Press Start
+    3. Input files (map, bug 1 and bug 2)
+    4. Click Start
+
+Test Data:
+10
+10
+# # # # . # # # # # # 
+# # # # # # # # # # #
+# # # # # # # # # # #
+# # # # # # # # # # #
+# # # # # # # # # # y
+# # # # # # # # # # #
+# # # # # # # # # # #
+# # # # # # # # # # #
+# # # # # # # # # # #
+# # # # # # # # # # #
+
+Expected Result:
+Should see an empty canvas due to wrong format input.
+
+Error message: None
+
+Result: Unexpected, 10x10 hexagon grid was drawn
+--------------------------------------------------
+Test Case #5
+Test Case Description:
+Check file reading
+
+File name: testpage_interactions.js
+Test steps:
+    1. Open application
+    2. Press Start
+    3. Input files (map, bug 1 and bug 2)
+    4. Click Start
+
+Test Data:
+JavaScript file
+
+Expected Result:
+Should not be able to proceed from step 3 due to wrong
+file extension input. "Start" button is cannot be clicked.
+
+Error message: An alert pops up: "All files mst be in .txt format"
+
+Result: As expected
+--------------------------------------------------
+Test Case #6
+Test Case Description:
+Check file reading for bug assembler
+
+File name: testpage_interactions.js
+Test steps:
+    1. Open application
+    2. Press Start
+    3. Input files for map, bug 1 and bug 2.
+        Files for map should be .txt
+        for bug1 and bug 2 any other file extension
+    4. Click Start
+
+Test Data:
+JavaScript file
+
+Expected Result:
+Should not be able to proceed from step 3 due to wrong
+file extension input. "Start" button is cannot be clicked.
+
+Error message: An alert pops up: "All files mst be in .txt format"
+
+Result: As expected
+--------------------------------------------------
